@@ -80,7 +80,7 @@ S3_FILE="${BACKUP_START_TIME}.sql"
 
 cd /backup
 echo "Dumping Database"
-su -c "/cockroach/cockroach dump $DATABASE_NAME --user $DATABASE_USER > dump.sql"
+/cockroach/cockroach dump $DATABASE_NAME --user $DATABASE_USER > dump.sql
 echo "Done"
 
 move_to_s3 dump.sql $S3_FILE
